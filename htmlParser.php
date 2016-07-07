@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Neko;
+namespace NeneNeko;
 
 use RuntimeException;
 use DOMDocument;
@@ -19,7 +19,7 @@ class htmlParser
     {
 
     /** @var Version htmlParser */
-    const version = '1.0.0';
+    const version = '1.0.1';
 
     /** @var Represents an entire HTML or XML document */
     private $domdocument;
@@ -66,7 +66,7 @@ class htmlParser
         if ( $this -> remove_stylesheet )
 	        $string = preg_replace ( '/<style\b[^>]*>(.*?)<\/style>/is', '', $string );
         libxml_use_internal_errors ( TRUE );
-        $string = self::convertEncoding ( $string );
+        $string = self :: convertEncoding ( $string );
         if ( $xml )
             $this -> domdocument -> loadXML ( $string );
         else
