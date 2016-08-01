@@ -196,7 +196,7 @@ class htmlParser
      *  @param $string The string being encoded.
      *  @return The encoded string.
      */
-    function convertEncoding ( $string )
+    private function convertEncoding ( $string )
         {
         $current_encoding = mb_detect_encoding ( $string , 'auto' );
         if ( $current_encoding == $this -> encoding )
