@@ -1,0 +1,16 @@
+{
+    "name": "neneneko/htmlparser",
+    "description": "html parser library",
+    "keywords": ["html parser"],
+    "homepage": "https://github.com/NeneNeko/htmlParser",
+    "license": "Apache-2.0",
+    "authors": [
+        { "name": "NeneNeko", "email": "lennon.rin@gmail.com" }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "psr-4": { "htmlParser\\": "src/" }
+    }
+}
