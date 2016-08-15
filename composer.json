@@ -11,6 +11,6 @@
         "php": ">=5.5"
     },
     "autoload": {
-        "psr-4": { "htmlParser\\": "src/" }
+        "psr-4": { "htmlparser\\": "src/" }
     }
 }
