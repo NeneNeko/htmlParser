@@ -8,9 +8,10 @@
         { "name": "NeneNeko", "email": "lennon.rin@gmail.com" }
     ],
     "require": {
-        "php": ">=5.5"
+        "php": ">=5.5",
+        "ext-mbstring": "*"
     },
     "autoload": {
-        "psr-4": { "htmlparser\\": "src/" }
+        "psr-4": { "NeneNeko\\htmlParser\\": "" }
     }
 }
