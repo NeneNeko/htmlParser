@@ -12,6 +12,6 @@
         "ext-mbstring": "*"
     },
     "autoload": {
-        "psr-4": { "NeneNeko\\htmlParser\\": "" }
+        "psr-4": { "NeneNeko\\": "" }
     }
 }
