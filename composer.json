@@ -12,6 +12,6 @@
         "ext-mbstring": "*"
     },
     "autoload": {
-        "psr-4": { "NeneNeko\\": "" }
+        "psr-4": { "NeneNeko\\": "src/" }
     }
 }
