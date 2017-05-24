@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace NeneNeko\htmlParser;
+namespace NeneNeko;
 
 use RuntimeException;
 use DOMDocument;
