@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace NeneNeko;
+namespace NeneNeko\htmlParser;
 
 use RuntimeException;
 use DOMDocument;
@@ -19,7 +19,7 @@ class htmlParser
     {
 
     /** @var Version htmlParser */
-    const version = '1.0.1';
+    const version = '1.0.2';
 
     /** @var Represents an entire HTML or XML document */
     private $domdocument;
