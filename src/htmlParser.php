@@ -19,7 +19,7 @@ class htmlParser
     {
 
     /** @var Version htmlParser */
-    const version = '1.0.2';
+    const version = '1.0.3';
 
     /** @var Represents an entire HTML or XML document */
     private $domdocument;
@@ -66,7 +66,7 @@ class htmlParser
         if ( $this -> remove_stylesheet )
 	        $string = preg_replace ( '/<style\b[^>]*>(.*?)<\/style>/is', '', $string );
         libxml_use_internal_errors ( TRUE );
-        $string = self :: convertEncoding ( $string );
+        //$string = self :: convertEncoding ( $string );
         if ( $xml )
             $this -> domdocument -> loadXML ( $string );
         else
@@ -124,6 +124,34 @@ class htmlParser
                 $value [] = $node -> textContent;
             else
                 $value [] = $node -> nodeValue;  
+        if ( $selectNode !== false )
+            return $value [ $selectNode ];
+        else
+            return $value;
+        }
+
+    /**
+     * The value or text content of this node select by node name
+     * 
+     *  @param $selectName Select node name of value. 
+     *  @param $selectNode Select node of value. 
+     *  @param $textContent Returns the text content of this node and its descendants.
+     *  @return Value of given XPath expression
+     */
+
+    public function getValuebyNode ( $nodeName, $selectNode = false, $textContent = false )
+        {
+        if ( !self :: length () )
+            return false;
+        $value = array ();
+        foreach ( $this -> domnode as $key=>$node )
+            if($node->childNodes->length)
+                foreach($node->childNodes as $child)
+                    if($child->nodeName == $nodeName)
+                        if ( $node -> nodeType == XML_CDATA_SECTION_NODE || $textContent )
+                            $value [$key][] = $child -> textContent;
+                        else
+                            $value [$key][] = $child -> nodeValue;  
         if ( $selectNode !== false )
             return $value [ $selectNode ];
         else
